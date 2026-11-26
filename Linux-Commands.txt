@@ -1,0 +1,234 @@
+
+LINUX COMMANDS JOURNAL
+
+My Cybersecurity Learning Lab
+Ubuntu 26.04.1 LTS
+
+1. whoami
+Purpose: Displays the currently logged-in username.
+
+2. pwd
+Purpose: Displays the current working directory.
+
+3. ls
+Purpose: Lists files and folders in the current directory.
+
+4. cd
+Purpose: Changes the current directory.
+
+5. mkdir
+Purpose: Creates a new directory (folder).
+
+6. cd ~
+Purpose: Returns to the user's home directory.
+
+My learning goal:
+Build practical Linux skills for cybersecurity and SOC Analyst work.
+Linux Practice – Lesson 2
+
+1. Identifying Users and Groups
+
+Command:
+whoami
+
+Purpose: Displays the username of the currently logged-in user.
+
+Command:
+id
+
+Purpose: Displays the user’s UID (User ID), GID (Group ID), and group memberships.
+
+2. Understanding Sudo
+
+Command:
+sudo
+
+Meaning: Superuser Do.
+
+Purpose: Allows an authorised user to execute commands with administrator privileges.
+
+Example:
+sudo apt update
+
+Security importance: Administrative privileges should be used carefully to prevent unauthorised system changes.
+
+3. Viewing File Permissions
+
+Command:
+ls -l
+
+Purpose: Lists files and directories, including their permissions, ownership, sizes and modification dates.
+
+Command:
+ls -ld Cybersecurity
+
+Purpose: Displays information and permissions for a specific directory.
+
+4. Linux File Permissions
+
+Linux uses three basic permission types:
+
+* r = Read (4)
+* w = Write (2)
+* x = Execute (1)
+
+Permissions are divided into three categories:
+
+* Owner
+* Group
+* Others
+
+5. Numerical Permissions
+
+Number	Permission
+0	No permissions
+1	Execute
+2	Write
+3	Write + Execute
+4	Read
+5	Read + Execute
+6	Read + Write
+7	Read + Write + Execute
+
+Practical Examples
+
+775
+
+* Owner: Read, Write, Execute
+* Group: Read, Write, Execute
+* Others: Read, Execute
+
+664
+
+* Owner: Read, Write
+* Group: Read, Write
+* Others: Read
+
+755
+
+* Owner: Read, Write, Execute
+* Group: Read, Execute
+* Others: Read, Execute
+
+777
+
+* Owner, Group and Others: Read, Write, Execute
+
+Security importance: Incorrect file permissions can expose sensitive information and allow unauthorised modifications.
+
+6. Navigating to the Linux Practice Folder
+
+Command:
+cd ~/Cybersecurity/Linux-Practice
+
+Purpose: Changes the current directory to the Linux Practice folder.
+
+⸻
+
+Practical Learning Completed:
+
+* Identifying Linux users and groups.
+* Understanding administrator privileges.
+* Inspecting file and directory permissions.
+* Interpreting numerical permission values.
+* Recognising potential Linux permission security risks.
+tail -n 20 Linux-Commands.txt
+
+
+7. Working with Linux Files and Permissions
+
+A. Creating Files Using touch
+
+Command:
+touch suspicious.sh
+
+Purpose:
+Creates an empty file if it does not already exist.
+
+File Extensions:
+- .sh - Shell script containing shell commands.
+- .txt - Plain text file.
+- .log - Log file used to record events and activities.
+- .conf - Configuration file.
+- .py - Python script.
+- .csv - Comma-separated data.
+- .json - Structured data.
+
+Note:
+File extensions help identify file types but do not guarantee the actual contents of a file.
+
+B. Listing Files and Inspecting Permissions
+
+Command:
+ls
+
+Purpose:
+Lists files and directories in the current location.
+
+Command:
+ls -l suspicious.sh
+
+Purpose:
+Displays detailed file information, including:
+- File permissions.
+- Number of links.
+- Owner.
+- Group.
+- File size.
+- Last modification date and time.
+- Filename.
+
+C. Changing File Permissions Using chmod
+
+Command:
+chmod 777 suspicious.sh
+
+Purpose:
+Gives the owner, group and others read, write and execute permissions.
+
+Permission Breakdown:
+- Owner: 7 (rwx)
+- Group: 7 (rwx)
+- Others: 7 (rwx)
+
+Security Importance:
+Permission 777 can create security risks because anyone with access to the file can modify and execute it.
+
+D. Restricting File Permissions
+
+Command:
+chmod 700 suspicious.sh
+
+Purpose:
+Restricts file permissions to the owner.
+
+Permission Breakdown:
+- Owner: 7 (rwx)
+- Group: 0 (---)
+- Others: 0 (---)
+
+Security Importance:
+Restricting permissions helps prevent unauthorised users from accessing or modifying files.
+
+E. SOC Analyst Practical Investigation
+
+Practical Exercise:
+Created an empty suspicious.sh file and deliberately changed its permissions from 664 to 777, then restricted them to 700.
+
+Security Lessons:
+- Investigate unfamiliar scripts before executing them.
+- Check file ownership and permissions.
+- Inspect file contents and investigate their origin.
+- Review relevant security logs for suspicious activity.
+- Apply appropriate file permissions to reduce security risks.
+
+Practical Learning Completed:
+- Creating files using touch.
+- Understanding common Linux file extensions.
+- Listing files using ls.
+- Inspecting file information using ls -l.
+- Understanding Linux permission values.
+- Changing permissions using chmod.
+- Identifying potentially insecure permissions.
+- Applying basic security investigation principles.
+
